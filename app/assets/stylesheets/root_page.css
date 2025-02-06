@@ -1,0 +1,61 @@
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    align-items: center; /* Centers the form vertically */
+    height: 50vh;
+    padding: 20px;
+}
+
+.loginTitle {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.loginForm {
+    display: grid;
+    max-width: 500px;
+    width: 100%; /* Makes sure it doesn't exceed the max width */
+    grid-template-columns: 1fr; /* A single column */
+    gap: 15px; /* Adds space between rows */
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 20px 10px 50px grey;
+
+}
+
+.nameField, .emailField, .passwordField {
+    text-align: center;
+    padding: 5px;
+}
+.loginAndcheckbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    font-size: 10px;
+}
+.shrLinks {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 40px;
+    gap: 70px;
+    margin-left: 90px;
+}
+.signupButton, .forgotPass {
+    color: red;
+    text-decoration: none;
+    font-size: 11px;
+}
+.loginButton {
+    background-color: #3B82F6;
+    color: white;
+    border-radius: 10px;
+    width: 60px;
+    border: 1px solid #3B82F6;
+    cursor: pointer;
+    text-align: center;
+}
