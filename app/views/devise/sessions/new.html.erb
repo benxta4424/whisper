@@ -1,3 +1,4 @@
+<div class="rootBody" style="background-image: url(<%= asset_path('8ji9vootufr71.jpg')%>);height:100vh">
 <%= stylesheet_link_tag "root_page" %>
 <h2 class="loginTitle">“Yokoso Watashi no Soul society”</h2>
 <div class="loginContainer">
@@ -6,15 +7,15 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
   <div class="nameField">
-      <%= f.text_field :name, autofocus: true, autocomplete: "username",placeholder: "username" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "username",placeholder: "username",class:"username" %>
     </div>
 
     <div class="emailField">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "email",class:"username" %>
     </div>
 
     <div class="passwordField">
-      <%= f.password_field :password, autocomplete: "current-password",placeholder:"password" %>
+      <%= f.password_field :password, autocomplete: "current-password",placeholder:"password",class:"username" %>
     </div>
 
     <div class="loginAndcheckbox">
@@ -35,3 +36,4 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>  
+</div>
