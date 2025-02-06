@@ -1,9 +1,7 @@
 <% if @posts %>
     <%= @posts.each do |pst| %>
-        <% if pst %>
-            <%= pst.body %>
-        <% else %>
-            <%= "No posts yet!" %>
-        <% end %>
+        <%= pst.body %>
     <% end %>
 <% end %>
+
+<h1>No posts yet!</h1>
