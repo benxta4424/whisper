@@ -1,9 +1,17 @@
-<% if @posts %>
-    <% @posts.each do |pst| %>
-        <%= pst.body %>
-    <% end %>
-<% end %>
+<%= stylesheet_link_tag "index_page" , media:"all" , 'data-turbo-track': 'reload' %>
+<div class="pages_main_container">
+    <div class="picture_and_searchbar">
+        <div class="profile_picture">   </div>
+        <div class="search_bar"> 
+                <%= form_with method: :get do |f| %>
+                    <%= f.text_field :search_user_field, class:"search_user_input",placeholder:"search users.." %>
+                    <%= f.submit class:"submit_button" %>
+                <% end %>
+         </div>
+    </div>
+    
+    <h1><%= current_user.name %></h1>
+    <h1><%= button_to "Log Out" , destroy_user_session_path, method: :delete %></h1>
 
-<h1>No posts yet!</h1>
-<%= current_user.id %>
-<%= button_to "Log Out", destroy_user_session_path, method: :delete, class:"logoutButton" %>
+</div>
+
