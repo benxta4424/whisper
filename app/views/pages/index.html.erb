@@ -5,7 +5,7 @@
         <div class="search_bar"> 
                 <%= form_with method: :get do |f| %>
                     <%= f.text_field :search_user_field, class:"search_user_input",placeholder:"search users.." %>
-                    <%= f.submit class:"submit_button" %>
+                    <%= f.button "src" ,type: "submit", class: "submit_button"%>
                 <% end %>
          </div>
     </div>

@@ -1,10 +1,9 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.assets.debug = true  # Ensures assets are not concatenated (helps debugging)
-  config.assets.compile = true  # Allows Rails to compile assets on the fly
-  config.assets.check_precompiled_asset = false  # Prevents checking precompiled assets
-  config.assets.digest = false
+  config.assets.debug = true
+config.assets.compile = true
+config.assets.check_precompiled_asset = false
 
   # Settings specified here will take precedence over those in config/application.rb.
 
