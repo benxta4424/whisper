@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_08_020522) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_08_233607) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -23,6 +23,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_08_020522) do
     t.string "content"
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "follower_id", null: false
+    t.bigint "followed_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_friendships_on_followed_id"
+    t.index ["follower_id"], name: "index_friendships_on_follower_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -55,5 +64,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_08_020522) do
   end
 
   add_foreign_key "comments", "users"
+  add_foreign_key "friendships", "users", column: "followed_id"
+  add_foreign_key "friendships", "users", column: "follower_id"
   add_foreign_key "posts", "users"
 end
