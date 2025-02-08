@@ -9,9 +9,25 @@
                 <% end %>
          </div>
     </div>
-    
-    <h1><%= current_user.name %></h1>
-    <h1><%= button_to "Log Out" , destroy_user_session_path, method: :delete %></h1>
 
+    <div class="all_content_second_row">
+
+        <div class="first_row_second_grid">
+
+            <div class="friend_list"> Friends </div>
+            <div class="saved_posts"> Saved </div>
+            <div class="log_out_button"><%= button_to "Log Out" , destroy_user_session_path, method: :delete %></div>
+
+        </div>
+
+        <div class="second_row_second_grid">
+
+        </div>
+
+        <div class="third_row_second_grid">
+
+        </div>
+
+    </div>
 </div>
 

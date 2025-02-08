@@ -2,16 +2,18 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 6fr;
-    border: 5px solid blue;
+    border: 3px solid blue;
     padding: 10px;
     border-radius: 2px;
     height: 100vh;
     width: 100%;
+    
 }
 .picture_and_searchbar {
     display: flex;
     margin-left: 10%;
     margin-right: 10%;
+    margin-top: 10px;
     gap: 40%;
     flex-shrink: 0;
     justify-content: space-between;
@@ -57,5 +59,30 @@
     border: 2px solid #1D4ED8;
     background-color: #0284C7;
     color: white;
+    cursor: pointer;
+}
+/* second row content */
+
+
+.all_content_second_row {
+    display: flex;
+    padding: 10px;
+}
+.first_row_second_grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    gap: 10%;
+    flex-direction: column;
+    background-color: white;
+    border: 3px solid #E0F2FE;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px #CFFAFE;
+}
+.friend_list, .saved_posts {
+    border: 2px solid black;
+    padding: 2px;
+    border-radius:5px;
     cursor: pointer;
 }

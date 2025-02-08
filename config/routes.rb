@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "pages#index"
 
-  devise_for :users
+  devise_for :users do
+    ressources :friendships
+  end
   resources :pages
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
