@@ -12,6 +12,6 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships, source: :follower
 
   # users that are being followed by the current user
-  has many :followed_relationships, class_name: "Friendship", foreign_key: "followed_id"
+  has_many :followed_relationships, class_name: "Friendship", foreign_key: "followed_id"
   has_many :following, through: :followed_relationships, source: :followed
 end
