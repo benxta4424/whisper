@@ -20,7 +20,7 @@
     flex-direction: row;
     align-items: center;
     border-radius: 30px;
-    box-shadow: 2px 2px 20px 10px #DBEAFE;
+    box-shadow: 2px 2px 20px 1px #DBEAFE;
     max-width: 95vw;
 }
 .profile_picture {
@@ -78,7 +78,7 @@
     background-color: white;
     border: 3px solid #E0F2FE;
     border-radius: 5px;
-    box-shadow: 10px 10px 10px #CFFAFE;
+    box-shadow: -10px -10px 10px #CFFAFE;
 }
 .friend_list, .saved_posts,.logout_button {
     display: flex;
@@ -117,4 +117,19 @@
     color: #FEF9C3;
     transition-duration: 0.5s;
 
+}
+
+/* the second column of the second row (main grid)*/
+
+.second_row_second_grid {
+    display: flex;
+
+    margin-left: 1%;
+    max-width: 75;
+    width: 70%;
+
+    border-radius: 5px;
+    overflow: auto;
+
+    box-shadow: 1px 1px 5px grey;
 }
