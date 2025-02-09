@@ -14,9 +14,9 @@
 
         <div class="first_row_second_grid">
 
-            <div class="friend_list"> <%= link_to "Friends" ,user_path(current_user) %> </div>
+            <div class="friend_list"> <%= link_to "Friends" ,user_path(current_user),class: :friend_button %> </div>
             <div class="saved_posts"> Saved </div>
-            <div class="log_out_button"><%= button_to "Log Out" , destroy_user_session_path, method: :delete %></div>
+            <div class="log_out_button"><%= button_to "Log Out" , destroy_user_session_path,class: :logout_button , method: :delete %></div>
 
         </div>
 
