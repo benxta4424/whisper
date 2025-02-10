@@ -25,6 +25,12 @@
                 <%# new post form %>
                 <%= render "new_post" %>
             </div>
+
+            <div class="rest_of_feed">
+                <div class="post_box">
+                    <%= turbo_frame_tag "new_post",src:user_posts_path(current_user),target:"_top" %>          
+                </div>                      
+            </div>
         </div>
 
         <div class="third_row_second_grid">

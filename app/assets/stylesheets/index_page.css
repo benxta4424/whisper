@@ -123,6 +123,7 @@
 
 .second_row_second_grid {
     display: flex;
+    justify-content: center;
 
     margin-left: 1%;
     max-width: 75;
@@ -138,9 +139,28 @@
 
 .add_new_post {
     display: flex;
-    flex: 1;
-    max-height: 10%;
-    max-width: 45%;
+    flex-shrink: 0;
+    flex-direction: column;
     justify-content: center;
-    border: 2px solid red;
+    margin-top: 1%;
+
+    height: 15%;
+    max-height: 10%;
+    width: 90%;
+    max-width: 95%;
+
+    box-shadow: 0px 1px 1px -1px grey ;
+
+}
+.add_post_input {
+    margin-left: 20%;
+    border-radius: 10px;
+    border:2px solid #FCA5A5;
+    width: 60%;
+}
+.add_post_button {
+    width: 7%;
+}
+turbo-frame {
+    border: 1px solid blue;
 }

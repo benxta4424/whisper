@@ -15,7 +15,8 @@ class PostsController < ApplicationController
         format.html { redirect_to root_path, notice: "Post Created!" }
       end
     else
-      render "pages/index", status: :unprocessable_entity    end
+      render "pages/index"
+    end
   end
 
   def show
@@ -24,6 +25,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:posts).permit(:title)
+    params.require(:post).permit(:title).merge(user_id: current_user.id)
   end
 end
