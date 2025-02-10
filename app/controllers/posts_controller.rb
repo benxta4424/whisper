@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post=current_user.post.build(post_params)
+    @post=current_user.posts.build(post_params)
     if @post.save
       respond_to do |format|
         format.turbo_stream
@@ -24,6 +24,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:posts).permit(:title, :body)
+    params.require(:posts).permit(:title)
   end
 end

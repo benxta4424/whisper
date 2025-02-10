@@ -133,3 +133,14 @@
 
     box-shadow: 1px 1px 5px grey;
 }
+
+/* 2nd row 2nd column - the user feed */
+
+.add_new_post {
+    display: flex;
+    flex: 1;
+    max-height: 10%;
+    max-width: 45%;
+    justify-content: center;
+    border: 2px solid red;
+}
