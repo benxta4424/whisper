@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  root "pages#index"
+  resources :controllers
   resources :pages, only: [ :index ]
 
   devise_for :users
   resources :users, only: [ :show ] do
     resources :friendships, only: [ :new, :create, :show, :destroy ]
+    resources :posts
   end
 
 
