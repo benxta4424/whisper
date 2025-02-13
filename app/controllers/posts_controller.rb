@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @user = User.find(current_user.id)
     @post=current_user.posts.build(post_params)
     if @post.save
       respond_to do |format|
