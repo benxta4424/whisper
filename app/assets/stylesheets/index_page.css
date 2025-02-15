@@ -123,6 +123,7 @@
 
 .second_row_second_grid {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
     margin-left: 1%;
@@ -161,6 +162,21 @@
 .add_post_button {
     width: 7%;
 }
-turbo-frame {
-    border: 1px solid blue;
+
+/* the feed itself */
+
+.rest_of_feed {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    padding: 5%;
+    overflow: auto;
+    border: 2px solid green;
+}
+.post_box {
+    display: flex;
+    gap: 5%;
+    height: 25%;
+    width: 100%;
+    border: 1px solid red;
 }
