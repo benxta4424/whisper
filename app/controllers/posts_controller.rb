@@ -9,13 +9,12 @@ class PostsController < ApplicationController
 
   def create
     @post=current_user.posts.build(post_params)
-    if @post.save
-      respond_to do |format|
+    respond_to do |format|
+      if @post.save
         format.turbo_stream
-        format.html { redirect_to root_path, notice: "Post Created!" }
+      else
+        format.html { render :new, status: :unprocessable_entity }
       end
-    else
-      render :new, status: :unprocessable_entity
     end
   end
 
