@@ -1,5 +1,5 @@
-<%= turbo_frame_tag "_new_post" do %>
-  <%= form_with url: user_posts_path(current_user), method: :post, local: false do |f| %>
+<%= turbo_frame_tag "new_post" do %>
+  <%= form_with url:user_posts_path, method: :post do |f| %>
     <%= f.text_field :title, name: "post[title]", placeholder: "#{current_user.name} share your thoughts..", class: "add_post_input" %>
     <%= f.submit "Post", class: "add_post_button" %>
   <% end %>

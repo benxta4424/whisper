@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root "pages#index"
+  root "posts#index"
 
   resources :pages, only: [ :index ]
+
   devise_for :users
 
   resources :users, only: [ :new, :create, :index, :show ] do

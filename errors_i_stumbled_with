@@ -1,0 +1,2 @@
+1. Turbo frame tag wasn't working:
+fix:should not use both javascript_importmap_tags and javascript_include_tag. The javascript_importmap_tags helper already handles loading JavaScript , so adding javascript_include_tag is redundant and can cause conflicts.

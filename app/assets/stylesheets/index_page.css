@@ -168,15 +168,15 @@
 .rest_of_feed {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex: 1;
     padding: 5%;
     overflow: auto;
-    border: 2px solid green;
 }
 .post_box {
     display: flex;
     gap: 5%;
-    height: 25%;
+    height: 10%;
     width: 100%;
     border: 1px solid red;
 }
