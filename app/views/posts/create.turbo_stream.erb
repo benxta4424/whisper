@@ -1,3 +1,1 @@
-<%= turbo_stream.prepend "post_box" do %>
-    <%= render partial:"posts/post",post:@post %>
-<% end %>
+<%= turbo_stream.append "rest_of_feed" , @post %>

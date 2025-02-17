@@ -26,10 +26,8 @@
                 <%= turbo_frame_tag "new_post",src:new_user_post_path(current_user) %>
             </div>
 
-            <div class="rest_of_feed">
-                <div class="post_box">
-                    <%= turbo_frame_tag "post_box" %>
-                </div>                      
+            <div id="rest_of_feed" class="rest_of_feed">                
+                <%= render @posts %>
             </div>
         </div>
 
