@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   resources :friendships, only: [ :new, :create, :show, :destroy ]
 
 
+  resources :likes, only: [ :new, :create, :show ]
+
   get "up" => "rails/health#show", as: :rails_health_check
 end
