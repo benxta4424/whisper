@@ -1,0 +1,44 @@
+#rest_of_feed {
+    display: flex;
+    flex-direction: column; /* Stack posts vertically */
+    width: 100%; /* Expand feed to full width */
+    max-height: 100%; /* Optional: Limits height with scrolling */
+    justify-content: center;
+    overflow: auto; /* Prevents double scrollbars */
+    padding: 5%;
+    border: 2px solid green;
+}
+
+.user_post {
+    display: flex;
+    align-items: center; /* Aligns content properly */
+    width: 100%;
+    border: 1px solid red;
+    padding: 10px;
+    gap: 10px; /* Space between user & post */
+    max-height: none; /* Allow height to expand as needed */
+    overflow: hidden; /* Prevents unnecessary scrollbars */
+}
+
+.curr_user {
+    border: 1px solid grey;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%; /* Makes it a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray; /* Placeholder background */
+}
+
+.post_title {
+    display: block; /* Fix for text wrapping */
+    max-width: 100%;
+    border: 3px solid black;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    padding: 5px;
+    flex: 1; /* Allows it to take up remaining space */
+}

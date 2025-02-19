@@ -9,5 +9,5 @@
 #   end
 User.create(name: "dan", email: "dan@dan", password: "dandan")
 User.create(name: "ben", email: "ben@ben", password: "benben")
-User.create(name: "teo", email: "teo@dteo", password: "teoteo")
+User.create(name: "teo", email: "teo@teo", password: "teoteo")
 Rails.logger.info("Added users!")
