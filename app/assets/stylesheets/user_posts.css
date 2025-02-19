@@ -8,16 +8,14 @@
     padding: 5%;
     border: 2px solid green;
 }
-
 .user_post {
     display: flex;
-    align-items: center; /* Aligns content properly */
+    align-items: flex-start; /* Align items at the top */
     width: 100%;
     border: 1px solid red;
     padding: 10px;
     gap: 10px; /* Space between user & post */
-    max-height: none; /* Allow height to expand as needed */
-    overflow: hidden; /* Prevents unnecessary scrollbars */
+    overflow: hidden;
 }
 
 .curr_user {
@@ -25,20 +23,27 @@
     width: 60px;
     height: 60px;
     overflow: hidden;
-    border-radius: 50%; /* Makes it a circle */
+    border-radius: 50%; /* Keeps it circular */
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: lightgray; /* Placeholder background */
+    flex-shrink: 0; /* Prevents shrinking when content grows */
+}
+
+.post_content {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Allows this section to expand */
+    min-width: 0; /* Prevents overflow issues */
 }
 
 .post_title {
-    display: block; /* Fix for text wrapping */
-    max-width: 100%;
+    display: block;
+    width: 92%;
     border: 3px solid black;
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
     padding: 5px;
-    flex: 1; /* Allows it to take up remaining space */
 }
