@@ -36,6 +36,7 @@
     flex-direction: column;
     flex: 1; /* Allows this section to expand */
     min-width: 0; /* Prevents overflow issues */
+    padding: 30px;
 }
 
 .post_title {
@@ -46,4 +47,9 @@
     overflow-wrap: break-word;
     white-space: normal;
     padding: 5px;
+}
+.post_links {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
 }

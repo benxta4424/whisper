@@ -1,4 +1,12 @@
 <div class="user_post">
     <div class="curr_user"> <%= current_user.name %> </div>
-    <div class="post_title"><%= post.title %></div>
+    <div class="post_title">
+        <div class="post_content"><%= post.title %></div>
+        
+        <div class="post_links">
+            <div class="like_post">Like</div>
+            <div class="comment_post">Comment</div>
+            <div class="share_post">Share</div>
+        </div>
+    </div>
 </div>
