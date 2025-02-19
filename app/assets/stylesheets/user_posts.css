@@ -6,13 +6,11 @@
     justify-content: center;
     overflow: auto; /* Prevents double scrollbars */
     padding: 5%;
-    border: 2px solid green;
 }
 .user_post {
     display: flex;
     align-items: flex-start; /* Align items at the top */
     width: 100%;
-    border: 1px solid red;
     padding: 10px;
     gap: 10px; /* Space between user & post */
     overflow: hidden;
@@ -42,7 +40,7 @@
 .post_title {
     display: block;
     width: 92%;
-    border: 3px solid black;
+    border: 5px solid black;
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
@@ -50,6 +48,7 @@
 }
 .post_links {
     display: flex;
+    cursor: pointer;
     padding: 20px;
     justify-content: space-between;
 }
