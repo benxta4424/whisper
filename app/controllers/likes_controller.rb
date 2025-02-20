@@ -3,7 +3,7 @@ class LikesController < ApplicationController
     @like=Like.create(like_params)
     respond_to do |format|
       if @like.save
-        format.html { redirect_to root_path }
+        format.html { flash[:succesfully_liked]="You've liked this post" }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
