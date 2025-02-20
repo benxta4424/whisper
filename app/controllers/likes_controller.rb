@@ -1,15 +1,16 @@
 class LikesController < ApplicationController
-  def new
-    @like=Like.new
-  end
-
   def create
-    @like=Like.new(like_params)
+    @like=Like.create(like_params)
+    respond_to do |format|
+      if @like.save
+        format.html { redirect_to root_path }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
   end
-
-  private
 
   def like_params
-    params.permit(:likes).require(:user_id, :post_id)
+    params.permit(:user_id, :post_id)
   end
 end

@@ -4,13 +4,14 @@
         <div class="post_content"><%= post.title %></div>
         
         <div class="post_links">
-            <% if current_user.likes.exists?(post_id:post.id) %>
-                <div class="like_post">Liked</div>
+            <% if current_user.likes.exists?(post.id) %>
+                <%# destroy the like %>
+                <div class="unlike_post"><%= button_to "Unlike" %></div>
             <% else %>
-                <div data-controller="like">
-                    <div data-action="click->like#after_click" class="like_post"><%= link_to "Like"%></div>
-                </div>
+                <%# create the like %>
+                <div class="like_post"><%= render "like_post",post:post.id %></div>
             <% end %>
+
             <div class="comment_post">Comment</div>
             <div class="share_post">Share</div>
         </div>
