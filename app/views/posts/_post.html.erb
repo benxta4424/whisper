@@ -6,7 +6,7 @@
         <div class="post_links">
             <% if current_user.likes.exists?(post_id:post.id) %>
                 <%# destroy the like %>
-                <div class="unlike_post"><%= button_to "Unlike" %></div>
+                <div class="unlike_post"><%= render "unlike_post",post:post %></div>
             <% else %>
                 <%# create the like %>
                 <div class="like_post"><%= render "like_post",post:post %></div>

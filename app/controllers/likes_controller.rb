@@ -10,6 +10,17 @@ class LikesController < ApplicationController
     end
   end
 
+  def destroy
+    @like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
+
+    if @like
+      @like&.destroy
+      flash[:succesfully_unlike]="Succesfully unliked post!"
+    else
+      flash[:failed_unlike]="Failed to unlike post!"
+    end
+  end
+
   def like_params
     params.permit(:user_id, :post_id)
   end
