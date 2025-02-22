@@ -65,4 +65,18 @@
 .link_style_button:hover {
     color: #0056b3; /* Hover color */
     text-decoration: none;
-  }
+}
+.unlike_post {
+    background: none;
+    border: none;
+    color: #007bff; /* Link color */
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+}
+  
+.unlike_post {
+    color: red; /* Hover color */
+    text-decoration: none;
+}

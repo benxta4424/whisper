@@ -3,7 +3,7 @@ class LikesController < ApplicationController
     @like=Like.create(like_params)
     respond_to do |format|
       if @like.save
-        format.html { flash[:succesfully_liked]="You've liked this post" }
+        format.turbo_stream
       else
         format.html { render :new, status: :unprocessable_entity }
       end
