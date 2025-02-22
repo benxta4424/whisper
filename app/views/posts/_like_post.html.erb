@@ -1,5 +1,5 @@
-<%= form_with url: post_likes_path(post), method: :post,data:{controller:"like"},local:false do |form| %>
+<%= form_with url: post_likes_path(post), method: :post,data:{controller:"like",disable_with:"Liking.."},local:false do |form| %>
     <%= form.hidden_field :user_id,value:current_user.id %>
     <%= form.hidden_field :post_id,value:post.id %>
-    <%= button_to "Like",post_likes_path(post),data:{controller:"like",action:"click->like#like_post"},class: "link_style_button" %>
+    <%= button_to "Like",post_likes_path(post),data:{like_target:"button",action:"click->like#like_post"},class: "link_style_button" %>
 <% end %>

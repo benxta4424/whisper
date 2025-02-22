@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets=["form","button"]
 
   like_post() { 
-    this.element.textContent = "Liking.."
+    this.buttonTarget.textContent = "Liking.."
   }
 
   unlike_post() {
