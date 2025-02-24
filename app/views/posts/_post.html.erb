@@ -13,8 +13,19 @@
                 <div class="like_post"><%= render "like_post",post:post %></div>
             <% end %>
 
-            <div class="comment_post">Comment</div>
+            <div class="comm">Comment</div>
             <div class="share_post">Share</div>
         </div>
+
+        <div class="comment_post">
+                <div class="comment_photo">
+                    <%= current_user.name %>
+                </div>
+
+                <div class="comment_content">
+                    <%= render "comments/form",post:post %>
+                </div>
+        </div>
+            
     </div>
 </div>

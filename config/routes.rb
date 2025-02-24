@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :comments
   root "posts#index"
 
   resources :pages, only: [ :index ]
@@ -12,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     resources :likes, only: [ :new, :create, :destroy ]
+    resources :comments, only: [ :new, :create ]
   end
 
   resources :friendships, only: [ :new, :create, :show, :destroy ]
