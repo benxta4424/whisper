@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :likes
+  has_many :comments
 
   # users that the current user being followed by
   has_many :follower_relationships, class_name: "Friendship", foreign_key: "follower_id"
