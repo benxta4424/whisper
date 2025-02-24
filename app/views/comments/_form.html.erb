@@ -1,7 +1,9 @@
-<%= form_with url:post_comments_path(post), method: :post do |form| %>
-    <%= form.hidden_field :user_id,value:current_user.id %>
-    <%= form.hidden_field :post_id,value:post.id %>
-    <%= form.text_field :content %>
-    <%= form.submit "Add Comment" %>
-  </div>
+<%= turbo_frame_tag "comment_content" do %>
+  <%= form_with url:post_comments_path(post), method: :post do |form| %>
+      <%= form.hidden_field :user_id,value:current_user.id %>
+      <%= form.hidden_field :post_id,value:post.id %>
+      <%= form.text_field :content %>
+      <%= form.submit "Add Comment" %>
+    </div>
+  <% end %>
 <% end %>

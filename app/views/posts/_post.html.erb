@@ -21,9 +21,11 @@
                 <div class="comment_photo">
                     <%= current_user.name %>
                 </div>
-
-                <div class="comment_content">
-                    <%= render "comments/form",post:post %>
+                
+                <%= turbo_frame_tag "comment_content", src:new_post_comment_path(post) %>
+                
+                <div id="comment_content">
+                    
                 </div>
         </div>
             
