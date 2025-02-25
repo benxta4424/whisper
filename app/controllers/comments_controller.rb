@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
+    @post=Post.find_by(id: params[:post_id])
     @comment = Comment.new
   end
 

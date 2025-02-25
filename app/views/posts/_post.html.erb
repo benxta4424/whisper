@@ -22,11 +22,7 @@
                     <%= current_user.name %>
                 </div>
                 
-                <%= turbo_frame_tag "comment_content", src:new_post_comment_path(post) %>
-                
-                <div id="comment_content">
-                    
-                </div>
+                <%= turbo_frame_tag "comment_content_#{post.id}",src:new_post_comment_path(post) %>
         </div>
             
     </div>
