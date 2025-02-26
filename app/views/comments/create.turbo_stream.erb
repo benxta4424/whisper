@@ -1,1 +1,6 @@
-<%= turbo_stream.prepend "comment_content_#{params[:post_id]}" , @comment %>
+<%= turbo_stream.append "comments_#{@comment.post_id}" do %>
+  <div class="comment_text">
+    <%= @comment.user.name %>
+    <%= @comment.content %>
+  </div>
+<% end %>

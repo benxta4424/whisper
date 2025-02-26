@@ -86,3 +86,29 @@
     min-height: 60px;
     align-items: center;
 }
+
+/* styling text */
+.comment_text {
+    border: 2px solid blue;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    width: 100%;
+}
+.new_comment_form {
+    border: 3px solid red;
+}
+.comment_photo {
+    border: 5px solid green;
+    width: 90%;
+}
+.comment_post {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+}
+.add_comment {
+    display: flex;
+    width: 100%;
+}
