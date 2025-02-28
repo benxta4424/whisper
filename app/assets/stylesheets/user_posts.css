@@ -95,13 +95,11 @@
     justify-content: space-between;
     flex: 1;
     width: 100%;
+    word-break: break-all;
+    overflow-wrap: break-word; /* Ensures text wraps */
 }
 .new_comment_form {
     border: 3px solid red;
-}
-.comment_photo {
-    border: 5px solid green;
-    width: 90%;
 }
 .comment_post {
     border: 1px solid blue;
@@ -109,6 +107,8 @@
     flex-direction: column;
 }
 .add_comment {
+    margin-top: 5%;
     display: flex;
+    justify-content: center;
     width: 100%;
 }

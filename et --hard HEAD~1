@@ -1,0 +1,294 @@
+[33mcommit 853630e97adc3190770d144b1fae7759b371e4cf[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Fri Feb 28 22:28:51 2025 +0200
+
+    adding a bit of tailwind so the login page is sizeable to various devices
+
+[33mcommit a524b8a413b29cd1d95af3b4506d025601dc3dec[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Fri Feb 28 03:57:15 2025 +0200
+
+    adding Tailwind to the project
+    (mainly for help with scaling to smaller devices)
+
+[33mcommit b7ce248d68fb023e168d2c065df00efe52d215ca[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Wed Feb 26 15:47:28 2025 +0200
+
+    rendering the comment into the post with matching id as the comment we're about to write
+
+[33mcommit db83ea566193f15e5b649d3290bdfcabfcde3db0[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Tue Feb 25 02:33:04 2025 +0200
+
+    lazy loading the commend and displaying them with turbo_stream on each post
+    (with the help of each posts's unique id "params[:post_id]")
+
+[33mcommit 9dcd6b8160f15571052f70dcd8821b61c7570853[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Tue Feb 25 01:38:23 2025 +0200
+
+    adding turbo stream for the generation of the comment and lazy loading the new form into the comment container
+
+[33mcommit 48084b3e151b37ea7f2adaa7763b0c89a866016a[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Mon Feb 24 23:02:22 2025 +0200
+
+    putting the comment under the posts at all times and rendering the "new" action for the comment
+
+[33mcommit b363ef69e1339aa550392ad9fdf0eef4f90338f0[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Mon Feb 24 17:48:03 2025 +0200
+
+    adding the comment scaffold and tying it to the users and posts
+
+[33mcommit 38eb0673e12e510fd7f7da72b123803aa4c1c5d6[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sun Feb 23 00:16:49 2025 +0200
+
+    dropping the comments model and table and adding new ones without using polymorphic as it can get confusing
+
+[33mcommit a0fed6b3d04036d8a72a7fd6f8fc08520a5025f1[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sat Feb 22 23:09:02 2025 +0200
+
+    adding a button to the new like form in order to not prevent the form submission from happening
+    
+    -hard thing:adding a stimulus controller to a form submit hinders the form submission and it stops the form from creating a the like
+    -solution: adding a custom button that executes the like creation and stimulus action at the same time
+
+[33mcommit 9f91d0734aa0d7938e2b3b16d6fcd007420977d6[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Fri Feb 21 23:58:04 2025 +0200
+
+    creating the logic for removing the like -destroying the like for the current user if it exists
+
+[33mcommit 1dd48bd06f16b8b6be97c47b523e1da3850eae2f[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Thu Feb 20 23:56:25 2025 +0200
+
+    fixed issue liking posts:
+    -i did not add the key-value hash post_id:post.id
+
+[33mcommit 0c1bbc43bf07d75613099594ff63dba503c24c0c[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Thu Feb 20 23:53:29 2025 +0200
+
+    creating a like everytime the current user clicks a post -issue:the posts are liked in order no matter which ones the user likes
+
+[33mcommit a3646950ba03c9b4295bdd160b05d223d5de01ae[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Thu Feb 20 00:58:57 2025 +0200
+
+    adding the associacion to the user and post model + adding some logic to the like button
+
+[33mcommit d91c6e1223ddd76fad156c18077e9827dfba082e[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Wed Feb 19 23:57:17 2025 +0200
+
+    adding the like model and its dependencies
+
+[33mcommit ae3322360d62fb257792eb8988ca1bdf4fa9f5b4[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Wed Feb 19 23:39:08 2025 +0200
+
+    adding a stimulus controller for a better user experience when liking the post
+
+[33mcommit 473126fd34538e0596bf3da09992661091eca4ff[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Wed Feb 19 04:00:25 2025 +0200
+
+    adding like,share,comment for each post
+
+[33mcommit e3f3f1cbc1699f14774d425c71dbadd2afa0fece[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Wed Feb 19 03:52:37 2025 +0200
+
+    expanding the post container dynamically to make content fit and look pleasant
+
+[33mcommit 351541945e44b259c1ded22e2f9956987fd26315[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Wed Feb 19 03:46:06 2025 +0200
+
+    creating the feed with the posts and the user that created it (i will change the name to a picture once i implement pictures for user profiles)
+
+[33mcommit aba2be4328159ad4e17cdaf8825f15a4b14fc742[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Mon Feb 17 20:06:53 2025 +0200
+
+    succesfully adding the post to the feed
+
+[33mcommit e96d86b1ad2c3c1761669e3e25b788b127aa5748[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sun Feb 16 23:39:06 2025 +0200
+
+    MAJOR CHANGES: no need for a homepage so the Pages controller is redundant
+    -i added the homepage as posts#index instead in order to keep things simpler and not add another layer of complexity
+
+[33mcommit e92814c8593e31b6d208df8e3110db372810e733[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sat Feb 15 22:31:15 2025 +0200
+
+    making partials in order to work easier with them on the homepage and turbo-stream
+
+[33mcommit 7b5f91372ab83033b5585bbc07e7ce9a07962a07[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sat Feb 15 17:49:23 2025 +0200
+
+    adding the correct format for the turbo stream post template
+
+[33mcommit 41036a80f86ea0beb9838a74ccb51c7bdfc44136[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sat Feb 15 16:52:07 2025 +0200
+
+    adding slight modifications for the lazy load (still didnt work tho..)
+
+[33mcommit a6a3aa8f6d2ca859c5af6e2e210b184905bec326[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sat Feb 15 16:49:20 2025 +0200
+
+    giving up on lazy loading and simply loading the new post from a partial within the pages files
+
+[33mcommit 5a7d44485b4e6f0a1a63ea6881467a8445855371[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sat Feb 15 16:46:54 2025 +0200
+
+    creating the turbo stream view for future use regarding the posting process
+
+[33mcommit 9b67c352382fce035d504290861a379326a8f050[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sat Feb 15 16:45:40 2025 +0200
+
+    removing unnecessary lines to make the controller lighter
+
+[33mcommit f63c34d225216b097fcd0098b1ddd509f82a9dc2[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Fri Feb 14 00:55:07 2025 +0200
+
+    adding the turbo-stream format for the dynamic posting
+
+[33mcommit b89d8d305c0ba4b88b07c26ec48d35cf920d4ad8[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Tue Feb 11 01:52:21 2025 +0200
+
+    manually adding the post content into the form and lazyly loading the new post onto small boxes within the feed with turbo frame tag
+
+[33mcommit d958175ed2421e3f2c9e391dfffc82af84ae2f1e[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Mon Feb 10 17:59:27 2025 +0200
+
+    removing the body from post + adding a partial in the homepage for the post creation and beggining to style and build the feed
+
+[33mcommit 3c767d5aff5888b400d23183d87844499e8fe898[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Mon Feb 10 17:08:07 2025 +0200
+
+    creating the posts controller responsible for the post creation
+
+[33mcommit 0b9aff8cfc04fdc5e3d81a7412430e841f317119[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Mon Feb 10 16:02:20 2025 +0200
+
+    i wanted to generate a scaffold for the posts but made a mistake and fixed it in the end
+
+[33mcommit 180c14a96a0e89145bf6461eec292f8c37f55192[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sun Feb 9 02:42:57 2025 +0200
+
+    the second column (and most important) is done and styled
+    now i need to add the current_users's feed and ability to post on it
+
+[33mcommit caff33a72afebbf0eb3f37a63d42b97693bdf3ae[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sun Feb 9 02:28:29 2025 +0200
+
+    adding the final touched on the left sidebar (making it more engaging with some cool styling)
+
+[33mcommit a2978645be06e7a8d893e2698f21ae76cfed43bc[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sun Feb 9 02:12:13 2025 +0200
+
+    adding the logic for the "Friends" button on the main page with the help of the user model
+    (we get the followers and followed for the current_user)
+
+[33mcommit 94b94a12154574e8aee46878aa90d904b7b482fe[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sun Feb 9 01:38:49 2025 +0200
+
+    migrating the correct associacion for the friendship model
+
+[33mcommit 07dcb776f84d8218ab08384c0efa0db974e482c0[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sun Feb 9 01:27:30 2025 +0200
+
+    adding the friendship model and its associacions as well as:
+    -finishing the friends-saved-logout sidebar
+    -adding the html skeleton for the: -feed,-messages,-news
+
+[33mcommit 64fada5a4564be120916cb54dc77bd37e3d5f3fd[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sat Feb 8 04:08:30 2025 +0200
+
+    addign a photos model for the users (ids match a photo for each user)
+
+[33mcommit b47023c14486055b5be298305a15f43353305146[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sat Feb 8 03:59:32 2025 +0200
+
+    finished the styling for the zoom adjusting
+
+[33mcommit 0d2341d020db55a34b3ddded366514f032cdcb9b[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Sat Feb 8 01:32:35 2025 +0200
+
+    adding a placeholder for the profile picture and a search form for the friends search
+
+[33mcommit b563effca1c27ee777b403c99f9e6cef9033c212[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Thu Feb 6 21:51:05 2025 +0200
+
+    finished styling the root page (adding a cool background image) +
+    doing a css reset on the whole project in order to make the image fit on the whole page
+
+[33mcommit 0406734a1967b9c0f02b481aa37e4bd2b554ad7e[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Thu Feb 6 05:42:30 2025 +0200
+
+    adding a background image inline (erb doesnt work in stylesheets for me)
+
+[33mcommit c2ed10bb575644755046ebdfce89cab562ad5836[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Thu Feb 6 04:52:55 2025 +0200
+
+    styling the root page of the project
+
+[33mcommit 10410e5d74bc4c41529024bc6a174f64e4bbac5a[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Thu Feb 6 03:31:41 2025 +0200
+
+    adding the comments model and its associacions
+    (polymorphic associacion means a user can comment on the comment and also on other commentable stuff but without the need for a new model for a through associacion)
+
+[33mcommit c4f66212118fc1cef6b76d147915e8f657936e24[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Wed Feb 5 19:44:16 2025 +0200
+
+    added the user reference to posts (i forgot when i added the associacion)
+
+[33mcommit 14fa72154f19880689f7145fe0a8112807d31b9d[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Wed Feb 5 19:29:56 2025 +0200
+
+    adding the Post logic (model+controller) and association with the User
+
+[33mcommit 64a84d8e7e6e4c3ba33f5b7723df30240e7d0046[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Wed Feb 5 19:03:57 2025 +0200
+
+    adding a name field to the devise controller in order to make it the main name on the profile
+
+[33mcommit 42a6a4bdb51f84ed65c9cdcd816f0b8c668803e8[m
+Author: benxta4424 <benxtaben@gmail.com>
+Date:   Wed Feb 5 17:18:02 2025 +0200
+
+    setting up the workspace for the app with the devise gem that generates the user and autorizations
