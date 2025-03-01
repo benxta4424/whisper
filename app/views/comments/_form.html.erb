@@ -1,5 +1,5 @@
 <%= turbo_frame_tag "comment_content_#{params[:post_id]}" do %>
-<%= form_with url: post_comments_path(params[:post_id]) do |form| %>
+<%= form_with url: post_comments_path(params[:post_id]),data:{controller:"clear-comms",action:"turbo:submit-end->clear-comms#clear"} do |form| %>
       <%= form.hidden_field :user_id,value:current_user.id %>
       <%= form.hidden_field :post_id,value:post %>
       <%= form.text_field :content,class:"write_comment" %>
