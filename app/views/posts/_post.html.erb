@@ -18,14 +18,13 @@
         </div>
 
         <div class="comment_post">
-            <div class="comment_photo">
-                <%= render "render_comment_text",post:post %>
-            </div>
-                <%# lazy loading the comment form %>
-            <div class="add_comment">    
-                <%= current_user.name %>
-                <%= turbo_frame_tag "comment_content_#{post.id}",src:new_post_comment_path(post),class:"new_comment_form" %>
-            </div>
+            <%= render "render_comment_text",post:post %>            
+        </div>
+
+        <div class="add_comment">    
+            <%# profile photo goes here instead of name %>
+            <%= current_user.name %> 
+            <%= turbo_frame_tag "comment_content_#{post.id}",src:new_post_comment_path(post),class:"new_comment_form" %>
         </div>
             
     </div>

@@ -2,7 +2,7 @@
 <%= form_with url: post_comments_path(params[:post_id]) do |form| %>
       <%= form.hidden_field :user_id,value:current_user.id %>
       <%= form.hidden_field :post_id,value:post %>
-      <%= form.text_field :content %>
-      <%= form.submit "Add Comment" %>
+      <%= form.text_field :content,class:"write_comment" %>
+      <%= form.submit "comment",class:"submit_comment" %>
   <% end %>
 <% end %>

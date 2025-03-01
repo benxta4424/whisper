@@ -14,9 +14,12 @@
     padding: 10px;
     gap: 10px; /* Space between user & post */
     overflow: hidden;
+
+    font-size: max(20%,2vh);
 }
 
 .curr_user {
+    font-size: max(40%,1.5vh);
     border: 1px solid grey;
     width: 60px;
     height: 60px;
@@ -87,28 +90,40 @@
     align-items: center;
 }
 
-/* styling text */
+/* styling the comment container */
+
 .comment_text {
+    margin-top: 5%;
     border: 2px solid blue;
-    flex-direction: row;
-    display: flex;
-    justify-content: space-between;
-    flex: 1;
-    width: 100%;
+    width: 50vw;
     word-break: break-all;
     overflow-wrap: break-word; /* Ensures text wraps */
 }
-.new_comment_form {
-    border: 3px solid red;
-}
 .comment_post {
-    border: 1px solid blue;
     display: flex;
-    flex-direction: column;
+    margin-left: 5%;
+    gap: 20px;
 }
+
+/* comment form */
 .add_comment {
     margin-top: 5%;
+    gap: 1%;
     display: flex;
     justify-content: center;
     width: 100%;
+    padding: 20px;
+}
+.write_comment {
+    border: 2px solid black;
+    width: 30vw;
+    height: 2.5vh;
+    border-radius: 10px;
+}
+.submit_comment {
+    background-color: black;
+    height: 2.5vh;
+    border-radius: 10px;
+    color: white; 
+    font-size: max(20%,1.4vh);  
 }

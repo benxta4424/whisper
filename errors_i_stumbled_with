@@ -1,2 +1,11 @@
 1. Turbo frame tag wasn't working:
 fix:should not use both javascript_importmap_tags and javascript_include_tag. The javascript_importmap_tags helper already handles loading JavaScript , so adding javascript_include_tag is redundant and can cause conflicts.
+
+2. Lazy loading turbo frame
+i tried:rendering lazy turbo frames so the current user can add posts/comments in real time without page reload (SPA)
+issues:i didnt understand how the frames really work and tried to render it directly which requires a page reload and without using turbo_stream
+fix:i render the partial that contains the form into an available route (such as NEW/CREATE) and i use the turbo frame tag to name the form and render it into the wanted container with turbo_Streams which does the job without needing a reload (for the current user at least)
+
+3. Styling for mobile layouts as well as bigger screens:
+i tried:using tailwind with its inline styling but i much more like the vanilla css since it gives me so much room and i can do whatever i want
+possible fix:trying to 
