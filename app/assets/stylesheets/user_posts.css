@@ -94,10 +94,13 @@
 
 .comment_text {
     margin-top: 5%;
-    border: 2px solid blue;
+    border: 5px solid blue;
+    border-style: inset;
     width: 50vw;
     word-break: break-all;
     overflow-wrap: break-word; /* Ensures text wraps */
+    padding: 10px;
+    border-radius: 2px;
 }
 .comment_post {
     display: flex;

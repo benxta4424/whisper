@@ -12,16 +12,19 @@
     display: flex;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 10px;
+    margin-top: 1%;
+    margin-bottom: 2%;
     gap: 20%;
     flex-shrink: 0;
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
     border-radius: 30px;
-    box-shadow: 2px 2px 20px 1px #DBEAFE;
+    box-shadow: 2px 2px 20px 1px #BAE6FD;
     height: 13vh;
     max-width: 95vw;
+
+    background-color: #F9FAFB;
 }
 .profile_picture {
     display: flex;
@@ -134,6 +137,7 @@
     width: 70%;
 
     border-radius: 5px;
+    background-color: #F8FAFC;
 
     box-shadow: 1px 1px 5px grey;
 }
