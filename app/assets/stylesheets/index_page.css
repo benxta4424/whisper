@@ -51,7 +51,8 @@
 .search_user_input {
     padding: 2px;
     width: 80%;
-    height: 90%;
+    height: auto; 
+    min-height: 40px;
     border-radius: 15px;
     border: 4px solid #0891B2;
 }
@@ -69,6 +70,7 @@
 
 .all_content_second_row {
     display: flex;
+    flex-wrap: wrap;
     padding: 10px;
 }
 .first_row_second_grid {
@@ -80,7 +82,6 @@
     width: 10vw;
     height: 80vh;
     gap: 10%;
-    flex-direction: column;
     background-color: white;
     border: 3px solid #E0F2FE;
     border-radius: 5px;
@@ -133,7 +134,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     margin-left: 1%;
-    max-width: 75;
+    max-width: 75%;
     width: 70%;
 
     border-radius: 5px;

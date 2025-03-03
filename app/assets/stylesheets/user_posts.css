@@ -1,6 +1,6 @@
 #rest_of_feed {
     display: flex;
-    flex-direction: column; /* Stack posts vertically */
+    flex-wrap: wrap;
     width: 100%; /* Expand feed to full width */
     max-height: 100%; /* Optional: Limits height with scrolling */
     justify-content: center;
