@@ -1,0 +1,5 @@
+<datalist id="users">
+    <% User.limit(10).each do |user| %>
+        <option value="<%= user.name %>"> 
+    <% end %>
+</datalist>

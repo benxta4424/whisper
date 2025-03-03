@@ -4,8 +4,9 @@
         <div class="profile_picture">   </div>
         <div class="search_bar"> 
                 <%= form_with method: :get do |f| %>
-                    <%= f.text_field :search_user_field, class:"search_user_input",placeholder:"search users.." %>
-                    <%= f.button "src" ,type: "submit", class: "submit_button"%>
+                    <%= f.text_field :search_user_field, class:"search_user_input",placeholder:"search users..",list:"users" %>
+                    <%= render "autocomplete" %>
+                    <%= f.button "src" ,type: "submit", class: "submit_button",data:{autocomplete_source: users_path} %>
                 <% end %>
          </div>
     </div>

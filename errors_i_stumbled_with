@@ -9,3 +9,7 @@ fix:i render the partial that contains the form into an available route (such as
 3. Styling for mobile layouts as well as bigger screens:
 i tried:using tailwind with its inline styling but i much more like the vanilla css since it gives me so much room and i can do whatever i want
 possible fix:trying to 
+
+4. Submit-End FORMS
+i tried: i did not know that submit-end existed as an action (act after a form submission has been sent). This was tricky because i wanted to do certain actions such as displaying something after Liking/Disliking a post or clearing an input field. I used click on a submit which rendered the form useless as the action of the submit form has been changed to that of the stimulus controller that acted upon the click.
+fix:i stumbled upon an old post that had the same problem as me: https://stackoverflow.com/questions/70732712/reset-form-in-hotwire. And used it to clear the comments input field and posts input field
