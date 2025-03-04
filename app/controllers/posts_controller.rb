@@ -4,7 +4,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts=Post.all
+    flwr_ids=current_user.follower_relationships.pluck(:followed_id)
+    flwr_ids<<current_user.id
+    @posts=Post.where(user_id: flwr_ids).ascending
   end
 
   def create

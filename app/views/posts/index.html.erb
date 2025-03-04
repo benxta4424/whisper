@@ -24,7 +24,7 @@
         <div class="second_row_second_grid">
             <div class="add_new_post">
                 <%# new post form %>
-                <%= turbo_frame_tag "new_post",src:new_user_post_path(current_user) %>
+                <%= turbo_frame_tag "new_post",src:new_user_post_path(current_user.id) %>
             </div>
 
             <div id="rest_of_feed">                
