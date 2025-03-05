@@ -4,9 +4,16 @@ class PostsController < ApplicationController
   end
 
   def index
-    flwr_ids=current_user.follower_relationships.pluck(:followed_id)
+    find_user=User.find_by(name: params[:search_user_field])
+
+    flwr_ids=current_user.followed_relationships.pluck(:followed_id)
     flwr_ids<<current_user.id
     @posts=Post.where(user_id: flwr_ids).ascending
+
+    if params[:search_user_field].present?
+      user=User.find_by(name: params[:search_user_field])
+      redirect_to user_path(user) if user
+    end
   end
 
   def create
@@ -27,6 +34,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.expect(post: [ :title ])
+    params.require(:post).permit(:title)
   end
 end
