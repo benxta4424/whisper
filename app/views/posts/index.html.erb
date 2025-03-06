@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "index_page" , media:"all" , 'data-turbo-track': 'reload' %>
 <div class="pages_main_container">
     <div class="picture_and_searchbar">
-        <div class="profile_picture">   </div>
+        <div class="profile_picture"> <%= image_tag current_user.profile_pic.variant(resize_to_fill: [10, 10]) %> </div>
         <div class="search_bar"> 
                 <%= render "search_users" %>
          </div>

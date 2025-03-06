@@ -23,7 +23,8 @@
 
         <div class="add_comment">    
             <%# profile photo goes here instead of name %>
-            <%= image_tag(current_user.profile_pic) %> 
+            <%= render "resize_picture_comments" %>
+
             <%= turbo_frame_tag "comment_content_#{post.id}",src:new_post_comment_path(post),class:"new_comment_form" %>
         </div>
             
