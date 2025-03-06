@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :pages, only: [ :index ]
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations" }
 
   resources :users, only: [ :new, :create, :index, :show ] do
     resources :posts

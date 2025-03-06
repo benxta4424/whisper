@@ -1,7 +1,11 @@
 <div id="comments_<%= post.id %>">
   <% post.comments.each do |cmt| %>
     <div class="comment_text">
-      <%= cmt.user.name %>
+      <% if cmt.user.profile_pic %>
+        <%= image_tag(cmt.user.profile_pic) %>
+      <% else %>
+        <%= cmt.user.name %>
+      <% end %>
       <%= cmt.content %>
     </div>
   <% end %>
