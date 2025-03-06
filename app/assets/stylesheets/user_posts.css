@@ -49,11 +49,15 @@
 .post_title {
     display: block;
     width: 92%;
-    border: 5px solid black;
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
     padding: 5px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    margin-bottom: 15px;
+    font-weight: 500
 }
 .post_links {
     display: flex;
