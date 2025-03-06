@@ -1,5 +1,6 @@
+<%# the picture that appears next to the comment input text %>
 <% if current_user.profile_pic %>
-    <%= image_tag current_user.profile_pic.variant(resize_and_pad:[5,5]) %>
+    <%= image_tag current_user.profile_pic.variant(resize_and_pad:[25,25]) %>
 <% else %>
     <%= current_user.name %>
 <% end %>

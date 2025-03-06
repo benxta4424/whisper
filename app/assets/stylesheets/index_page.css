@@ -31,12 +31,14 @@
     flex-shrink: 0;
     margin-top: auto;
     margin-bottom: auto;
-    border: 1px solid black;
-    height: 50%;
-    width: 4.6%;
+    height:8vh;
+    width: 7vw;
     border-radius: 100%;
     margin-left: 4%;
     cursor: pointer;
+}
+.tweak_prof_pic {
+   border-radius: 100px;
 }
 .search_bar {
     display: flex;

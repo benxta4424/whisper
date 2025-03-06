@@ -2,11 +2,12 @@
   <% post.comments.each do |cmt| %>
     <div class="comment_text">
       <% if cmt.user.profile_pic %>
-        <%= image_tag(cmt.user.profile_pic) %>
+        <%= image_tag(cmt.user.profile_pic.variant(resize_to_fill:[40, 40])) %>
       <% else %>
         <%= cmt.user.name %>
       <% end %>
-      <%= cmt.content %>
+      
+      <%= ": #{cmt.content}" %>
     </div>
   <% end %>
 </div>

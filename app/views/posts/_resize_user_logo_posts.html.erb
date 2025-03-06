@@ -1,0 +1,8 @@
+<%# the picture that appears next to the comment input text %>
+<%= link_to user_path(post.user_id) do%>
+    <% if post.user.profile_pic.attached? %>
+        <%= image_tag post.user.profile_pic.variant(resize_to_fill:[70,70]),class:"tweak_posted_by_user_photo" %>
+    <% else %>
+        <%= post.user.name %>
+    <% end %>
+<%end %> 

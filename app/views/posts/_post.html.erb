@@ -1,5 +1,5 @@
 <div class="user_post">
-    <div class="curr_user"> <%= link_to "#{User.find_by(id: post.user_id).name}",user_path(post.user_id) %> </div>
+    <div class="curr_user"> <%= render "resize_user_logo_posts",post:post %> </div>
     <div class="post_title">
         <div class="post_content"><%= post.title %></div>
         
