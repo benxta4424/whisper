@@ -1,11 +1,11 @@
 <%= turbo_stream.append "comments_#{@comment.post_id}" do %>
   <div class="comment_text">
     <% if current_user.profile_pic.present? %>
-      <%= image_tag current_user.profile_pic.variant(resize_and_pad: [40, 40]), class: "comment-avatar" %>
+      <%= image_tag current_user.profile_pic.variant(resize_to_fill: [40, 40]).processed, class: "comment_avatar" %>
     <% else %>
       <span class="comment-username"><%= current_user.name %></span>
     <% end %>
     
-    <span class="comment-content"><%= @comment.content %></span>
+    <span class="comment-content"><%= ": #{@comment.content}" %> </span>
   </div>
 <% end %>
