@@ -1,4 +1,15 @@
-<h1>This is where the user sees his friends</h1>
-<% @posts.each do |pst| %>
-    <%= pst.title %>
-<% end %>
+<%= link_to "Go Back",posts_path,class:"go_back" %>
+<div class="individual_user_container">
+    <div class="individual_picture_and_links">
+        <div class="individual_picture"> <%= image_tag @user.profile_pic.variant(resize_to_fill:[400,300]),class:"individual_profile_pic" %> </div>
+        <div class="follow_and_message">
+            <div class="follow_user">
+                Follow
+            </div>
+
+            <div class="message_user">
+                Message
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+.go_back {
+    color: #4F46E5;
+    font-weight: 900;
+    font-size: 20px;
+    margin-left: 0.5%;
+}
+.individual_user_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin-top: 4%;
+    height: 400px;
+    border: 2px solid red;
+}
+.individual_picture_and_links {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    max-height: 400px;
+
+}
+.individual_profile_pic {
+    border-radius: 300px;
+    box-shadow: 0 0 5px 5px #A78BFA;
+}
+.follow_and_message {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
