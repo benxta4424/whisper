@@ -110,8 +110,9 @@
     width: 50vw;
     word-break: break-all;
     overflow-wrap: break-word; /* Ensures text wraps */
-    padding: 10px;
-    border-radius: 2px;
+    border-radius: 15px;
+    padding: 6px;
+    border: 1px solid #ccc;
 }
 .comment_post {
     display: flex;
