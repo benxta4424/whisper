@@ -12,9 +12,11 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @find_friendship=Friendship.where(follower_id: current_user.id, followed_id: @user.id)
-    if @find_friendship
-      @find_friendship&.destroy
+    user=User.find_by(id: params[:followed_id])
+    find_friendship=Friendship.find_by(follower_id: current_user.id, followed_id: user&.id)
+
+    if find_friendship
+      find_friendship.destroy
     else
       flash[:friendship_not_found]="Friendship not found!"
     end

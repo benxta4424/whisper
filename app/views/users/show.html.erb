@@ -3,8 +3,12 @@
     <div class="individual_picture_and_links">
         <div class="individual_picture"> <%= image_tag @user.profile_pic.variant(resize_to_fill:[400,300]),class:"individual_profile_pic" %> </div>
         <div class="follow_and_message">
-            <div class="follow_user">
-                Follow
+            <div class="follow_user" id="flw_usr">
+                <% if Friendship.find_by(follower_id:current_user.id,followed_id:@user&.id) %>
+                    <%= render "unfollow_user" %>
+                <% else %>
+                    <%= render "follow_user" %>
+                <% end %>
             </div>
 
             <div class="message_user">
