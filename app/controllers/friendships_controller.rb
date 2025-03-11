@@ -18,8 +18,7 @@ class FriendshipsController < ApplicationController
     find_friendship.destroy! if find_friendship.present?
 
     respond_to do |format|
-        format.turbo_tream
-        format.html { redirect_to user_path(@user), status: :unprocessable_entity }
+        format.html { redirect_to @user, notice: "You have unfollowed #{@user.name}." }
     end
   end
 end

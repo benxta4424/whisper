@@ -2,7 +2,7 @@
   <% friendship = Friendship.find_by(follower_id: current_user.id, followed_id: @user&.id) %>
 
   <% if friendship %>
-    <%= button_to "Unfollow", user_friendship_path(current_user.id, friendship.id), method: :delete %>
+    <%= button_to "Unfollow", user_friendship_path(current_user&.id, friendship&.id), method: :delete %>
   <% else %>
     <%= button_to "Follow", user_friendships_path(user_id: @user&.id), method: :post %>
   <% end %>
