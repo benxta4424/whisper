@@ -1,6 +1,7 @@
 class FriendshipsController < ApplicationController
   def create
-    @friendship=Friendship.create(friendship_params)
+    @user=User.find_by(id: params[:user_id])
+    @friendship=Friendship.create(follower_id: current_user.id, followed_id: @user&.id)
 
     respond_to do |format|
       if @friendship.save
@@ -12,19 +13,13 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    user=User.find_by(id: params[:followed_id])
-    find_friendship=Friendship.find_by(follower_id: current_user.id, followed_id: user&.id)
+    @user=User.find_by(id: params[:user_id])
+    find_friendship=Friendship.find(params[:id])
+    find_friendship.destroy! if find_friendship.present?
 
-    if find_friendship
-      find_friendship.destroy
-    else
-      flash[:friendship_not_found]="Friendship not found!"
+    respond_to do |format|
+        format.turbo_tream
+        format.html { redirect_to user_path(@user), status: :unprocessable_entity }
     end
-  end
-
-  private
-
-  def friendship_params
-    params.require(:friendship).permit(:follower_id, :followed_id)
   end
 end

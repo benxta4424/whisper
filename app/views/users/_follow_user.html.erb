@@ -1,3 +1,0 @@
-<div id="flw_usr">
-    <%= button_to "Follow",friendships_path(follower_id:current_user.id,followed_id:@user.id),method: :post,remote: :true,id:"user_#{@user.id}",class:"follow_user" %>
-</div>
