@@ -14,4 +14,10 @@ class UsersController < ApplicationController
     @followed=@user.following
     @posts = @user.posts.order(created_at: :desc)
   end
+
+  def profile
+    @followers=current_user.followers
+    @followed=current_user.following
+    @posts = current_user.posts.order(created_at: :desc)
+  end
 end
