@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "users/registrations" }
 
-  resources :users, only: [ :new, :create, :index, :show ] do
+  resources :users, only: [ :new, :create, :index, :show, :update ] do
     resources :posts
     resources :friendships, only: [ :new, :create, :destroy ]
     get :profile

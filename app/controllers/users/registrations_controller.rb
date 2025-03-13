@@ -16,9 +16,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # #   super
   # # end
 
-  # # def update
-  # #   super
-  # # end
+  # def update
+  #   current_user.update(configure_account_update_params)
+  # end
 
   # def destroy
   #   super
