@@ -1,23 +1,124 @@
-.profile_container {
-    border: 1px solid red;
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Profile Picture Section */
+  .profile-container {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    height: 400px;
-    max-width: none;
-}
-.profile_pic_container {
-    margin-left: 3%;
-    display: flex;
-    width: 30%;
-    border: 2px solid rebeccapurple;
-}
-.cruser_profile_pic {
-    max-width: 100%;
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-}
-.change_profile_picture {
-    display: flex;
-    font-size: 90%;
-    margin-left: 5%;
-}
+    background-color: #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .default-profile {
+    color: #555;
+    font-size: 14px;
+  }
+  
+  /* Form Styling */
+  .form-container {
+    background: white;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .file-input {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background: #0056b3;
+  }
+  
+  /* Delete Account Section */
+  .delete-title {
+    font-size: 18px;
+    color: red;
+    margin-top: 20px;
+  }
+  
+  .delete-text {
+    color: #666;
+  }
+  
+  .delete-container {
+    margin-top: 10px;
+  }
+  
+  .delete-btn {
+    padding: 8px 16px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .delete-btn:hover {
+    background: darkred;
+  }
+  
+  /* Back Link */
+  .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+  }

@@ -2,7 +2,7 @@
 <div class="pages_main_container">
     <div class="picture_and_searchbar">
         <div class="profile_picture"> 
-            <%= link_to user_profile_path(current_user) do %>
+            <%= link_to edit_user_registration_path(current_user) do %>
                 <%= image_tag current_user.profile_pic.variant(resize_to_fill: [200, 200]),class:"tweak_prof_pic" %> </div>
             <% end %>
         <div class="search_bar"> 
