@@ -11,9 +11,12 @@
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    height: 60vh;
+    height: 45vh;
     width: 30%;
-    border: 2px solid red;
+    
+    background-color: rgb(255, 250, 250);
+    border-radius: 10px;
+    box-shadow: -1px 5px 5px 2px #E879F9;
 }
 .individual_picture_and_links {
     display: flex;
@@ -30,7 +33,9 @@
 .follow_and_message {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 80%;
+    margin-right: 2%;
 }
 .unfollow_user_button {
     color: red;
@@ -64,6 +69,7 @@
     gap:25%;
     margin-right: 5%;
     font-size: 10px;
+    font-weight: 900;
     padding: 20px;
     margin-top: 200px;
     margin-left: 5%;
