@@ -10,14 +10,8 @@ class UsersController < ApplicationController
   end
   def show
     @user=User.find(params[:id])
+    @posts=@user.posts
     @followers=@user.followers
     @followed=@user.following
-    @posts = @user.posts.order(created_at: :desc)
-  end
-
-  def profile
-    @followers=current_user.followers
-    @followed=current_user.following
-    @posts = current_user.posts.order(created_at: :desc)
   end
 end

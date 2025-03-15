@@ -1,5 +1,5 @@
 <div class="user_post">
-    <div class="curr_user"> <%= render "resize_user_logo_posts",post:post %> </div>
+    <div class="curr_user"> <%= render "posts/resize_user_logo_posts",post:post %> </div>
     <div class="post_title">
         <div class="post_content"><%= post.title %></div>
         
@@ -7,10 +7,10 @@
             <% if current_user.likes.exists?(post_id:post.id) %>
                 <%# destroy the like %>
                 
-                <div class="unlike_post"><%= render "unlike_post",post:post %></div>
+                <div class="unlike_post"><%= render "posts/unlike_post",post:post %></div>
             <% else %>
                 <%# create the like %>
-                <div class="like_post"><%= render "like_post",post:post %></div>
+                <div class="like_post"><%= render "posts/like_post",post:post %></div>
             <% end %>
 
             <div class="comm">Comment</div>
@@ -18,12 +18,12 @@
         </div>
 
         <div class="comment_post">
-            <%= render "render_comment_text",post:post %>            
+            <%= render "posts/render_comment_text",post:post %>            
         </div>
 
         <div class="add_comment">    
             <%# profile photo goes here instead of name %>
-            <%= render "resize_picture_comments" %>
+            <%= render "posts/resize_picture_comments" %>
 
             <%= turbo_frame_tag "comment_content_#{post.id}",src:new_post_comment_path(post),class:"new_comment_form" %>
         </div>
