@@ -19,7 +19,11 @@
             <% end %>
 
             <div class="message_user">
-                Message
+                <% if ChatRoom.find_by(follower_id:current_user.id,followed_id:@user.id).present? %>
+                    <%= button_to "To Messages",root_path %>
+                <% else %>
+                    <%= link_to "Message",new_chat_room_path(follower_id:current_user.id,followed_id:@user.id),class:"message_btn" %>
+                <% end %>
             </div>
         </div>    
     </div>
