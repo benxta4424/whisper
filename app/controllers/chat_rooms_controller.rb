@@ -12,6 +12,7 @@ class ChatRoomsController < ApplicationController
 
   # GET /chat_rooms/new
   def new
+    @user=User.find(params[:followed_id])
     @chat_room = ChatRoom.new
   end
 
