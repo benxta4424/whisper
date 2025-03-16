@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :chat_rooms
   resources :messages
   root "posts#index"
 
