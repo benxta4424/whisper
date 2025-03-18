@@ -33,7 +33,7 @@
 
         <div class="third_row_second_grid">
             <div class="message_feed">
-
+                <%= ChatRoom.find_by(follower_id:current_user.id,followed_id:@user&.id)&.id %>
             </div>
             
             <div class="news_feed">

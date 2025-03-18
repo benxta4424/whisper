@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_16_003133) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_17_001750) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -80,9 +80,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_16_003133) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.string "text"
+    t.bigint "chat_room_id", null: false
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -123,5 +125,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_16_003133) do
   add_foreign_key "friendships", "users", column: "follower_id"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
+  add_foreign_key "messages", "chat_rooms"
   add_foreign_key "posts", "users"
 end

@@ -17,7 +17,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create message" do
     assert_difference("Message.count") do
-      post messages_url, params: { message: { text: @message.text } }
+      post messages_url, params: { message: { chat_room_id: @message.chat_room_id, content: @message.content } }
     end
 
     assert_redirected_to message_url(Message.last)
@@ -34,7 +34,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update message" do
-    patch message_url(@message), params: { message: { text: @message.text } }
+    patch message_url(@message), params: { message: { chat_room_id: @message.chat_room_id, content: @message.content } }
     assert_redirected_to message_url(@message)
   end
 

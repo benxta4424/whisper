@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :messages
   root "posts#index"
 
   resources :pages, only: [ :index ]
