@@ -12,7 +12,7 @@ class ChatRoomsController < ApplicationController
 
   # GET /chat_rooms/new
   def new
-    @user=User.find(params[:followed_id])
+    @user=User.find_by(id: params[:followed_id])
     @chat_room = ChatRoom.new
   end
 
@@ -66,6 +66,6 @@ class ChatRoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def chat_room_params
-      params.expect(chat_room: [ :follower_id, :followed_id ])
+      params.permit(:follower_id, :followed_id)
     end
 end

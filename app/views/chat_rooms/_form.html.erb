@@ -1,19 +1,8 @@
 <%= turbo_frame_tag "message" do %>
-  <%= form_with(model: chat_room) do |form| %>
-    <% if chat_room.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(chat_room.errors.count, "error") %> prohibited this chat_room from being saved:</h2>
-
-        <ul>
-          <% chat_room.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <%= form_with(url:chat_rooms_path) do |form| %>
       <%= form.hidden_field :follower_id,value:current_user.id %>
-      <%= form.hidden_field :followed_id,value:user&.id %>
-      <%= form.submit %>
+      <%= form.hidden_field :followed_id,value:@user&.id %>
+      <%= form.submit "Message",class:"message_btn" %>
     </div>
   <% end %>
 <% end %>

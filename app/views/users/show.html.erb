@@ -14,16 +14,10 @@
         <div class="individual_picture"> <%= image_tag @user.profile_pic.variant(resize_to_fill:[400,300]),class:"individual_profile_pic" %> </div>
         
         <div class="follow_and_message">
-            <%= turbo_frame_tag "toggle_follow" do%>
-                <%= render partial: "friendships/follow_unfollow",locals:{user:@user} %>
-            <% end %>
+            <%= render partial: "friendships/follow_unfollow",locals:{user:@user} %>
 
             <div class="message_user">
-                <% if ChatRoom.find_by(follower_id:current_user.id,followed_id:@user.id).present? %>
-                    <%= button_to "To Messages",root_path %>
-                <% else %>
-                    <%= link_to "Message",new_chat_room_path(follower_id:current_user.id,followed_id:@user.id),class:"message_btn",user:@user %>
-                <% end %>
+                <%= render partial:"chat_rooms/open_chat" %>
             </div>
         </div>    
     </div>

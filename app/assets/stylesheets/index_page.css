@@ -5,8 +5,7 @@
     padding: 10px;
     border-radius: 2px;
     height: 100vh;
-    width: 100%;
-    
+    width: 100vw;    
 }
 .picture_and_searchbar {
     display: flex;
