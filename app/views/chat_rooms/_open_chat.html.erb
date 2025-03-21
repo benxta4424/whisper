@@ -1,9 +1,1 @@
-<%= turbo_frame_tag "open_chat_tag" do %>
-    <% found_chat=ChatRoom.find_by(follower_id:current_user.id,followed_id:@user&.id) %>
-
-    <% if found_chat %>
-        <%= button_to "Message",chat_rooms_path(found_chat&.id) ,class:"message_btn" %>
-    <% else %>
-        <%= button_to "Message",chat_room_path,class:"message_btn" %>
-    <% end %>
-<% end %>
+<%= button_to "Message",chat_rooms_path,params:{follower_id:current_user.id,followed_id:@user&.id},method: :post,class:"message_btn" %>

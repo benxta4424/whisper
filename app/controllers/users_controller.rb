@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     end
   end
   def show
+    @chat_room=ChatRoom.find_by(follower_id: current_user.id, followed_id: @user&.id)
     @user=User.find(params[:id])
     @posts=@user.posts
     @followers=@user.followers

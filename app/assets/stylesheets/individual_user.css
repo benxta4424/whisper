@@ -79,3 +79,7 @@
     height: 10px;
     margin-top: 40%;
 }
+
+.chat_bar {
+    border: 2px solid rebeccapurple;
+}

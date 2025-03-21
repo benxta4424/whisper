@@ -5,12 +5,6 @@ class ChatRoomsController < ApplicationController
   def index
     @chat_rooms = ChatRoom.all
   end
-
-  # GET /chat_rooms/1 or /chat_rooms/1.json
-  def show
-  end
-
-  # GET /chat_rooms/new
   def new
     @user=User.find_by(id: params[:followed_id])
     @chat_room = ChatRoom.new
@@ -22,17 +16,13 @@ class ChatRoomsController < ApplicationController
 
   # POST /chat_rooms or /chat_rooms.json
   def create
-    @chat_room = ChatRoom.new(chat_room_params)
+    @user=User.find_by(id: params[:followed_id])
 
-    respond_to do |format|
-      if @chat_room.save
-        format.html { redirect_to @chat_room, notice: "Chat room was successfully created." }
-        format.json { render :show, status: :created, location: @chat_room }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @chat_room.errors, status: :unprocessable_entity }
-      end
-    end
+    @chat_room = ChatRoom.find_or_create_by(
+      follower_id: current_user.id,
+      followed_id: @user&.id
+    )
+    redirect_to chat_room_path(@chat_room) if @chat_room.present?
   end
 
   # PATCH/PUT /chat_rooms/1 or /chat_rooms/1.json
@@ -58,10 +48,16 @@ class ChatRoomsController < ApplicationController
     end
   end
 
+  def show
+    @chat_room=ChatRoom.find(params[:id])
+    @user=User.find_by(id: @chat_room.followed_id)
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_chat_room
-      @chat_room = ChatRoom.find(params.expect(:id))
+      @chat_room = ChatRoom.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
