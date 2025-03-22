@@ -1,15 +1,8 @@
-<%= form_with(model: message) do |form| %>
-  <div>
-    <%= form.label :chat_room_id, style: "display: block" %>
-    <%= form.text_field :chat_room_id %>
-  </div>
-
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.textarea :content %>
-  </div>
-
-  <div>
-    <%= form.submit "send" %>
-  </div>
+<%= turbo_frame_tag "message" do %>
+  <%= form_with(url: chat_room_messages_path(@chat_room.id), local: true) do |form| %>
+    <div class="message_form">
+      <%= form.text_field :content ,class:"message_input"%>
+      <%= form.submit "send" %>
+    </div>
+  <% end %>
 <% end %>

@@ -1,5 +1,17 @@
-<div class="chatroom_button_links">
-  <%= @user&.id %>
-  <%= link_to "Go Back", user_path(@user&.id) %>
-  <%= button_to "Delete Convo", @chat_room, method: :delete %>
+<div class="chat_page_container">
+  <div class="chatroom_button_links">
+    <%= link_to "Go Back", user_path(@user&.id) %>
+    <%= button_to "Delete", @chat_room, method: :delete %>
+  </div>
+
+  <div class="chat_box">
+    <div class="sent_messages">
+      <%= "#{current_user.id}:" %>
+      <%= render @chat_room.messages %>
+    </div>
+
+    <div class="send_message">
+      <%= render partial:"messages/form" %>
+    </div>
+  </div>
 </div>

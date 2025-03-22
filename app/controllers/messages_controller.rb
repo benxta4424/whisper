@@ -65,6 +65,6 @@ class MessagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def message_params
-      params.expect(message: [ :chat_room_id, :content ])
+      params.permit(:chat_room_id, :content)
     end
 end
