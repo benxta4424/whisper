@@ -26,3 +26,8 @@
     border-radius: 10px;
     height: 20px;
 }
+.sent_messages {
+    display: flex;
+    justify-content: space-between;
+    border: 10px solid red;
+}

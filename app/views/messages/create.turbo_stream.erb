@@ -1,0 +1,6 @@
+<%= turbo_stream.append "sent_messages" do %>
+    <div class="message_trbstream">
+        <%= current_user.name %>
+        <%= ": #{@message.content}" %>
+    </div>
+<% end %>
