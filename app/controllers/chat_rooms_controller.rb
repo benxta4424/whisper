@@ -16,28 +16,18 @@ class ChatRoomsController < ApplicationController
 
   # POST /chat_rooms or /chat_rooms.json
   def create
-    def create
-      @user = User.find_by(id: params[:followed_id])
-      return redirect_to root_path, alert: "User not found" unless @user
+    @user=User.find_by(id: params[:followed_id])
 
-      # Check if a chat room already exists with reversed roles
-      @chat_room = ChatRoom.find_by(
-        follower_id: current_user.id,
-        followed_id: @user.id
-      ) || ChatRoom.find_by(
-        follower_id: @user.id,
-        followed_id: current_user.id
-      )
+    @chat_room = ChatRoom.find_or_create_by(
+      follower_id: current_user.id,
+      followed_id: @user&.id
+    ) || ChatRoom.find_or_create_by(
+      follower_id: @user&.id,
+      followed_id: current_user.id
+    )
 
-      # If no existing room, create a new one
-      @chat_room ||= ChatRoom.create(
-        follower_id: current_user.id,
-        followed_id: @user.id
-      )
-
-      redirect_to chat_room_path(@chat_room)
-    end
-    end
+    redirect_to chat_room_path(@chat_room) if @chat_room.present?
+  end
 
   # PATCH/PUT /chat_rooms/1 or /chat_rooms/1.json
   def update

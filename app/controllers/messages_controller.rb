@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
 
   # GET /messages/new
   def new
+    @chat_room=ChatRoom.find_by(id: params[:chat_room_id])
     @message = Message.new
   end
 
@@ -25,8 +26,8 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
+        format.turbo_stream
         format.html { redirect_to @message, notice: "Message was successfully created." }
-        format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @message.errors, status: :unprocessable_entity }

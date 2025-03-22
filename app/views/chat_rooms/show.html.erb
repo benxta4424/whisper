@@ -6,12 +6,11 @@
 
   <div class="chat_box">
     <div class="sent_messages">
-      <%= "#{current_user.id}:" %>
       <%= render @chat_room.messages %>
     </div>
 
     <div class="send_message">
-      <%= render partial:"messages/form" %>
+      <%= turbo_frame_tag "message",src:new_chat_room_message_path(@chat_room) %>
     </div>
   </div>
 </div>
