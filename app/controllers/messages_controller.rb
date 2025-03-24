@@ -22,7 +22,8 @@ class MessagesController < ApplicationController
 
   # POST /messages or /messages.json
   def create
-    @message = Message.new(message_params)
+    @chat_room=ChatRoom.find_by(id: params[:chat_room_id])
+    @message = Message.create(message_params)
 
     respond_to do |format|
       if @message.save
@@ -61,11 +62,11 @@ class MessagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_message
-      @message = Message.find(params.expect(:id))
+      @message = Message.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def message_params
-      params.permit(:chat_room_id, :content)
+      params.permit(:chat_room_id, :content, :user_id)
     end
 end

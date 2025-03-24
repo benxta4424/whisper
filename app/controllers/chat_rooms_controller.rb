@@ -7,7 +7,7 @@ class ChatRoomsController < ApplicationController
   end
   def new
     @user=User.find_by(id: params[:followed_id])
-    @chat_room = ChatRoom.new
+    @chat_room = ChatRoom.find_by(id: params[:chat_room_id])
   end
 
   # GET /chat_rooms/1/edit

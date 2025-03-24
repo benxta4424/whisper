@@ -6,7 +6,7 @@
 
   <div class="chat_box">
     <div class="sent_messages" id="sent_messages">
-      <%= render @chat_room.messages %>
+      <%= render partial:"messages/render_message" %>
     </div>
 
     <div class="send_message">

@@ -18,4 +18,7 @@ class User < ApplicationRecord
 
   # profile photo
   has_one_attached :profile_pic
+
+  # messages for the user
+  has_many :messages
 end

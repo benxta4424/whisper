@@ -1,8 +1,0 @@
-<%= turbo_frame_tag "message" do %>
-  <%= form_with(url: chat_room_messages_path(chat_room.id), local: true) do |form| %>
-    <div class="message_form">
-      <%= form.text_field :content ,class:"message_input"%>
-      <%= form.submit "send" %>
-    </div>
-  <% end %>
-<% end %>
