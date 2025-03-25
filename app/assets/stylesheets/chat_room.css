@@ -16,13 +16,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 30px;
     gap: 20px;
     min-height: 400px;
-    width: 60%;
-    border-radius: 60px;
-    background-color:  #fbfcfc;
+    width: 50vw;
+    border-radius: 20px;
 
+    background-color: #f6fafd;
     box-shadow: 1px 1px 5px #dbdbd2;
 }
 .message_input {
@@ -37,13 +38,16 @@
 .sent_messages {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
+    width: 100%;
     padding: 30px;
     gap: 400px;
-    min-height: 400px;
-    width: 300px;
-    border-radius: 40px;
+    min-height: 500px;
     word-break: break-all;
+    background-color: #fbfcfc;
+    box-shadow: 1px 1px 5px #dbdbd2;
+
 }
 .source_user_message {
     margin-bottom: 30px;
@@ -51,10 +55,11 @@
     font-weight: 800;
     border-radius: 10px;
     padding: 10px;
-    width: 500px;
-    margin-left: 100%;
-    background-color:#f2fff5;
-    color:#26b749 ;
+    width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f2fff5;
+    color: #26b749;
 
     box-shadow: 1px 1px 1px 2px #0cad33 ;
 }
@@ -64,7 +69,8 @@
     font-weight: 800;
     border-radius: 10px;
     padding: 10px;
-    width: 300px;
+    width: 30vw;
+    margin-left: auto;
     margin-right: auto;
     background-color:   #f6fafd ;
     color: blue;
