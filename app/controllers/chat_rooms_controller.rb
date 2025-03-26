@@ -18,13 +18,20 @@ class ChatRoomsController < ApplicationController
   def create
     @user=User.find_by(id: params[:followed_id])
 
-    @chat_room = ChatRoom.find_or_create_by(
+    @chat_room = ChatRoom.find_by(
       follower_id: current_user.id,
       followed_id: @user&.id
-    ) || ChatRoom.find_or_create_by(
-      follower_id: @user&.id,
-      followed_id: current_user.id
-    )
+    ) ||  @chat_room=ChatRoom.find_by(
+            follower_id: @user&.id,
+            followed_id: current_user.id
+          )
+
+    unless @chat_room
+      @chat_room=ChatRoom.create(
+        follower_id: @user&.id,
+        followed_id: current_user.id
+      )
+    end
 
     redirect_to chat_room_path(@chat_room) if @chat_room.present?
   end
