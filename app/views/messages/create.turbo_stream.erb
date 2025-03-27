@@ -1,7 +1,7 @@
 <%= turbo_stream.append "message" do %>
     <% if @message.user_id==current_user.id %>
             <div class="source_user_message">
-                <%= current_user.name %>: <%= @message.content %>
+                <%= "me" %>: <%= @message.content %>
             </div>
         <% else %>
             <div class="destination_user_message">

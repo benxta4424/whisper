@@ -1,10 +1,10 @@
 <div class="chat_page_container">
   <div class="chatroom_button_links">
     <%= link_to "Go Back", user_path(@user&.id) %>
-    <%= button_to "Delete", @chat_room, method: :delete %>
+    <%= button_to "Delete", @chat_room, method: :delete,class:"delete_button" %>
   </div>
 
-  <div class="chat_box">
+  <div class="chat_box" >
     <div class="sent_messages" id="sent_messages">
       <%= render partial:"messages/render_message" %>
     </div>

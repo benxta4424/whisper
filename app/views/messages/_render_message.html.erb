@@ -2,7 +2,7 @@
     <% @chat_room.messages.each do |msg| %>
         <% if msg.user_id==current_user.id %>
             <div class="source_user_message">
-                <%= current_user.name %> <%= ": #{msg.content}" %>
+                <%= "me" %> <%= ": #{msg.content}" %>
             </div>
         <% else %>
             <div class="destination_user_message">
