@@ -41,6 +41,7 @@
 .post_content {
     display: flex;
     flex-direction: column;
+    min-width: 80%;
     flex: 1; /* Allows this section to expand */
     min-width: 0; /* Prevents overflow issues */
     padding: 30px;

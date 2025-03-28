@@ -4,23 +4,23 @@
     <%= render "users/shared/error_messages", resource: resource %>
 
     <div class="sign-field">
-      <%= f.text_field :name, placeholder:"username.." %>
+      <%= f.text_field :name, placeholder:"username",class:"sign_input" %>
     </div>
 
     <div class="sign-field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"email",class:"sign_input" %>
     </div>
 
     <div class="sign-field">
-      <%= f.password_field :password, autocomplete: "new-password",placeholder:"password.." %>
+      <%= f.password_field :password, autocomplete: "new-password",placeholder:"password",class:"sign_input" %>
     </div>
 
     <div class="sign-field">
-      <%= f.password_field :password_confirmation,placeholder:"confirm password" ,autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation,placeholder:"confirm password" ,autocomplete: "new-password",class:"sign_input" %>
     </div>
 
     <div class="sign-field">
-        <%= f.file_field :profile_pic %>
+        <%= f.file_field :profile_pic,class:"sign_input" %>
     </div>
 
     <div class="actions">
