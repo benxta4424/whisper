@@ -33,7 +33,14 @@ class ChatRoomsController < ApplicationController
       )
     end
 
-    redirect_to chat_room_path(@chat_room) if @chat_room.present?
+    respond_to do |format|
+      if @chat_room.save
+        format.html
+        format.turbo_stream
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /chat_rooms/1 or /chat_rooms/1.json

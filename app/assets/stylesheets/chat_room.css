@@ -154,3 +154,8 @@
     background: linear-gradient(135deg, #0056b3, #004099);
     box-shadow: 0px 3px 8px rgba(0, 91, 187, 0.5);
 }
+
+.brot {
+    border: 2px solid red;
+    height: 400px;
+}
