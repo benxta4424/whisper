@@ -1,27 +1,30 @@
 <%= link_to "Go Back",posts_path,class:"go_back" %>
 <div class="individual_user_container">
-    <div class="individual_picture_and_links">
-        <%# following situation for the visited user %>
-        <div class="individual_followers">
-            <div class="individual_followers_title"> following:
-                <%= @followers.length %>
-            </div>
-            <div class="individual_following_title"> followers:
-                <%= @followed.length %>
-            </div>
-        </div>  
+        <div class="individual_picture_and_links" id="user_convo">
+            <div class="auxiliar_spacing">
+            <%# following situation for the visited user %>
+                <div class="individual_followers">
+                    <div class="individual_followers_title"> following:
+                        <%= @followers.length %>
+                    </div>
+                    <div class="individual_following_title"> followers:
+                        <%= @followed.length %>
+                    </div>
+                </div>  
 
-        <div class="individual_picture"> <%= image_tag @user.profile_pic.variant(resize_to_fill:[400,300]),class:"individual_profile_pic" %> </div>
+                <div class="individual_picture" > <%= image_tag @user.profile_pic.variant(resize_to_fill:[400,300]),class:"individual_profile_pic" %> </div>
         
-        <div class="follow_and_message">
-            <%= render partial: "friendships/follow_unfollow",locals:{user:@user} %>
+                <div class="follow_and_message">
+                    <%= render partial: "friendships/follow_unfollow",locals:{user:@user} %>
 
-            <div class="message_user">
-                <%= render partial:"chat_rooms/open_chat" %>
+                    <div class="message_user">
+                        <%= render partial:"chat_rooms/open_chat" %>
+                    </div>
             </div>
-        </div>    
-    </div>
+        </div>
 
+    </div>
+    
     <div class="individual_user_posts">
         <%= render @user.posts %>
     </div>
