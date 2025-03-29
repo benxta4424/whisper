@@ -33,7 +33,12 @@
 
         <div class="third_row_second_grid">
             <div class="message_feed">
-                <%= ChatRoom.find_by(follower_id:current_user.id,followed_id:@user&.id)&.id %>
+                <% if @last_messages %>
+                    <% @last_messages.each do |usr,msg| %>
+                        <%= usr %>
+                        <%= msg %>
+                    <% end %>
+                <% end %>
             </div>
             
             <div class="news_feed">

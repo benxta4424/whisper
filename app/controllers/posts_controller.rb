@@ -14,6 +14,18 @@ class PostsController < ApplicationController
       user=User.find_by(name: params[:search_user_field])
       redirect_to user_path(user) if user
     end
+
+    # find the last messages of each convo between the current user and his/her friends
+    @chat_room=ChatRoom.where("follower_id = ? OR followed_id = ?", current_user.id, current_user.id)
+    @last_messages={}
+
+    unless @chat_room.nil?
+      @chat_room.each do |room_id|
+        find_player=Message.where(chat_room_id: room_id).last.user_id
+        find_message=Message.where(chat_room_id: room_id).last.content
+        @last_messages[find_player]=find_message
+      end
+    end
   end
 
   def create
