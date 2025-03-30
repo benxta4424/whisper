@@ -20,9 +20,14 @@ class PostsController < ApplicationController
     @last_messages={}
 
     unless @chat_room.nil?
-      @chat_room.each do |room_id|
-        find_player=Message.where(chat_room_id: room_id).last.user_id
-        find_message=Message.where(chat_room_id: room_id).last.content
+      @chat_room.each do |chat_room|
+        if chat_room.follower_id==current_user.id
+          find_player=chat_room.followed_id
+        else
+          find_player=chat_room.follower_id
+        end
+          find_message=Message.where(chat_room_id: chat_room).last.content
+
         @last_messages[find_player]=find_message
       end
     end

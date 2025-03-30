@@ -35,9 +35,14 @@
             <div class="message_feed">
                 <% if @last_messages %>
                     <% @last_messages.each do |usr,msg| %>
-                        <%= usr %>
-                        <%= msg %>
+                        <div class="message_box">
+                            <% user=User.find_by(id:usr) %>
+                            <%= image_tag user.profile_pic.variant(resize_to_fill:[50,50]) %>
+                            <%= ": #{msg}" %>
+                        </div>
                     <% end %>
+                <% else %>
+                    <%= "No messages!" %>
                 <% end %>
             </div>
             

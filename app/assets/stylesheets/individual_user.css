@@ -45,7 +45,7 @@
     justify-content: center;
     margin-top: 1%;
     margin-left: 1%;
-    gap: 20px; /* Reduced */
+    gap: 30%; /* Reduced */
     margin-right: 2%;
     flex-wrap: wrap; /* Prevents breaking on small screens */
 }
@@ -93,8 +93,11 @@
 }
 .individual_picture_and_links {
     width: 550px;
-    padding: 20px;
-    gap: 10%;
+    min-width: 350px;
+    max-width: 90%;
+    padding: 10px;
     margin: auto auto;
-    box-shadow: 10px 2px 10px 10px purple;
+    border-radius: 50px;
+    margin-bottom: 10%;
+    box-shadow: 5px -5px 5px oklch(0.74 0.238 322.16);
 }
