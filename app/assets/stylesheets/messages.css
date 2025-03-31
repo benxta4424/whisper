@@ -18,7 +18,6 @@
 }
 .news_feed {
     display: flex;
-    border: 3px solid purple;
     width: 100%;
     height: 15rem;
 }
