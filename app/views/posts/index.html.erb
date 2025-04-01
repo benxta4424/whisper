@@ -34,12 +34,19 @@
         <div class="third_row_second_grid">
             <div class="message_feed">
                 <% if @last_messages %>
-                    <% @last_messages.each do |usr,msg| %>
-                        <div class="message_box">
-                            <% user=User.find_by(id:usr) %>
-                            <%= image_tag user.profile_pic.variant(resize_to_fill:[50,50]) %>
-                            <%= ": #{msg}" %>
-                        </div>
+                    <% @last_messages.each do |usr,msg| %>                            <% user=User.find_by(id:usr) %>
+                        <% user=User.find_by(id:usr) %>
+                        <%# finding the room between the current user and the user that we extract these messages from %>
+                        <% @find_room=ChatRoom.find_by("follower_id = ? OR followed_id = ?", user&.id, user&.id) %>
+                            
+                        <%# finding the room between the current user and the user that we extract these messages from %>
+                        <% @find_room=ChatRoom.find_by("follower_id = ? OR followed_id = ?", user&.id, user&.id) %>
+    
+                        <%= link_to chat_room_path(@find_room&.id) do%>                            
+                            <div class="message_box">
+                                <%= image_tag user.profile_pic.variant(resize_to_fill:[35,35]) %> <%= ": #{msg}" %>
+                            </div>
+                        <% end %>
                     <% end %>
                 <% else %>
                     <%= "No messages!" %>
