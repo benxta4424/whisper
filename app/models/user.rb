@@ -18,6 +18,16 @@ class User < ApplicationRecord
 
   # profile photo
   has_one_attached :profile_pic
+  
+  # Add this callback to run the job after saving the new image
+  after_commit :process_profile_pic, on: [:create, :update], if: -> { profile_pic.attached? && profile_pic.new_record? }
+
+  private
+
+  def process_profile_pic
+    # Enqueue the job to generate the variants in the background
+    CompressImageJob.perform_later(self.id, 'User', :profile_pic)
+  end
 
   # messages for the user
   has_many :messages

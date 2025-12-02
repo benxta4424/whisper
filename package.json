@@ -1,0 +1,20 @@
+{
+  "name": "whisper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/benxta4424/whisper.git",
+  "author": "benxta4424 <podean.beni@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.20",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "webpack": "^5.103.0",
+    "webpack-cli": "^6.0.1"
+  }
+}

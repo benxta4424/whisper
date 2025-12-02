@@ -5,7 +5,7 @@ gem "rails", "~> 8.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+gem "pg", "~> 1.6"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
@@ -54,7 +54,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem "rails_live_reload"
+  # gem "rails_live_reload"
 end
 
 group :test do
@@ -65,3 +65,4 @@ end
 
 gem "devise"
 gem "hotwire-rails"
+gem "wdm", ">= 0.1.0", platforms: %i[mingw mswin x64_mingw jruby]
